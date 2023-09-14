@@ -4,10 +4,14 @@ import { defineConfig } from "vite"
 
 export default defineConfig({
   plugins: [react()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
+  optimizeDeps: {
+    exclude: 
+      ['@ffmpeg/ffmpeg', '@ffmpeg/util']
   },
-})
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
+      },
+    },
+  })
 
